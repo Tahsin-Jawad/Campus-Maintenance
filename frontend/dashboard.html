@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CampusCare | Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="dashboard-page">
+  <aside class="sidebar">
+    <a class="brand brand-dark" href="dashboard.html"><span class="brand-mark">EW</span><span>CampusCare</span></a>
+    <div class="side-label">WORKSPACE</div>
+    <nav><a class="nav-link active" href="#overview"><span class="nav-icon">▦</span> Overview</a><a class="nav-link" href="#workArea"><span class="nav-icon">▤</span><span id="navWorkLabel">My complaints</span></a></nav>
+    <div class="sidebar-bottom"><div class="help-card"><div class="help-icon">✦</div><strong>Need help?</strong><p>Submit a facility issue and track its progress here.</p></div><button id="logoutBtn" class="logout-btn">↪ <span>Sign out</span></button></div>
+  </aside>
+
+  <main class="main-content">
+    <header class="topbar"><div><div class="breadcrumb">Workspace <span>/</span> Overview</div><h1 id="welcomeTitle">Dashboard</h1></div><div class="profile-chip"><div class="avatar" id="userAvatar">U</div><div><strong id="userName">User</strong><small id="userRole">Role</small></div></div></header>
+    <section class="page-content" id="overview">
+      <div class="welcome-banner"><div><span class="eyebrow">CAMPUS FACILITY SUPPORT</span><h2 id="bannerTitle">Welcome back</h2><p id="bannerText">A smoother campus experience starts with a quick report.</p></div><div class="banner-art">✳</div></div>
+      <div class="stats-grid" id="statsGrid"></div>
+      <section id="studentFormSection" class="content-card hidden">
+        <div class="section-heading"><div><span class="eyebrow">NEW REQUEST</span><h2>Report a facility issue</h2><p>Share the details and our team will look into it.</p></div><span class="section-symbol">＋</span></div>
+        <form id="complaintForm" class="request-form">
+          <label>Issue title<input id="complaintTitle" required maxlength="150" placeholder="e.g. Projector not working"></label>
+          <div class="form-grid"><label>Building / location<select id="complaintLocation" required><option value="">Select location</option><option value="1">Academic Building A — Room 101</option><option value="2">Academic Building A — Room 201</option><option value="3">Academic Building B — Room 102</option><option value="4">Library — Main Floor</option><option value="5">Cafeteria — Ground Floor</option><option value="6">Administrative Building — Office</option></select></label><label>Issue category<select id="complaintCategory" required><option value="">Select category</option><option value="1">Electrical</option><option value="2">Air Conditioning</option><option value="3">Projector</option><option value="4">Computer & Network</option><option value="5">Furniture</option><option value="6">Washroom</option><option value="7">Other</option></select></label></div>
+          <label>Description<textarea id="complaintDescription" rows="4" required placeholder="Describe the issue and any useful details..."></textarea></label>
+          <button class="btn btn-primary" type="submit">Submit report <span>→</span></button>
+        </form>
+      </section>
+      <section id="workArea" class="content-card">
+        <div class="section-heading"><div><span class="eyebrow" id="workEyebrow">YOUR ACTIVITY</span><h2 id="workTitle">My complaints</h2><p id="workDescription">Review the reports you have submitted.</p></div><button class="btn btn-outline btn-small" id="refreshBtn" type="button">↻ Refresh</button></div>
+        <div id="recordsContainer" class="records-container"><div class="loading-state">Loading your workspace...</div></div>
+      </section>
+    </section>
+  </main>
+  <div id="toast" class="toast" role="status"></div>
+  <script src="js/api.js"></script><script src="js/dashboard.js"></script>
+</body>
+</html>
