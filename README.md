@@ -1,125 +1,145 @@
 # EWU Campus Maintenance & Facility Issue Reporting System
 
-A web-based system to report and manage maintenance problems at East West University (EWU).
+A web-based platform for reporting, managing, and tracking maintenance issues at East West University (EWU).
 
-## 1. About the Project
+\<p align="center">   \<a href="[https://campus-maintenance.pages.dev](https://campus-maintenance.pages.dev)">\<strong>🚀 Live Demo\</strong>\</a>   &nbsp; | &nbsp;   \<a href="[https://github.com/Tahsin-Jawad/Campus-Maintenance](https://github.com/Tahsin-Jawad/Campus-Maintenance)">\<strong>GitHub Repository\</strong>\</a> \</p>
 
-The EWU Campus Maintenance System is designed to make campus maintenance easier, faster, and more organized.
+## About the Project
 
-Students and faculty members can report problems in different areas of the university. Admins can manage complaints and assign them to maintenance staff.
+The EWU Campus Maintenance System provides a centralized platform where students and faculty members can report campus facility problems.
 
-## 2. Why Did We Choose This Project?
+Administrators can review complaints, assign them to maintenance staff, and monitor their progress. Staff members can manage assigned tasks and update complaint statuses.
 
-Every university campus faces different internal problems, such as:
+The goal is to make campus maintenance more organized, transparent, and efficient.
 
-- Broken chairs and tables.
-- Air conditioning problems.
-- Electrical issues.
-- Projector and computer problems.
-- Internet and network issues.
-- Washroom and other facility problems.
-
-At EWU, students often face these problems but may not know where or how to report them. Sometimes, complaints do not get proper attention from the responsible authority. There is also no easy way to track whether a reported problem has been solved.
-
-We chose this project to create a simple platform where campus problems can be reported, managed, and tracked properly.
-
-## 3. Our Solution
-
-Our system provides a central platform for reporting and managing campus maintenance issues.
-
-1. Students and faculty members submit complaints.
-2. Complaints are stored in the database.
-3. Admins review and assign complaints to maintenance staff.
-4. Staff members work on assigned issues and update their status.
-5. Users can track their complaints and check their progress.
-
-This process helps make complaint management more organized and transparent.
-
-## 4. Main Features
+## Main Features
 
 - User Registration and Login
-- Role-Based Access
-- Complaint Submission
-- Complaint Tracking
-- Complaint History
+- Role-Based Authentication
+- Student and Faculty Complaint Submission
+- Complaint Tracking and History
 - Admin Dashboard
 - Maintenance Staff Dashboard
-- Complaint Assignment
-- Status Updates
-- User Feedback System
+- Complaint Assignment to Staff
+- Complaint Status Management
+- Complaint History Tracking
+- User Feedback and Rating System
 
-## 5. User Roles
+## User Roles
 
-| Role | Responsibilities |
-|---|---|
-| Student | Submit complaints and track progress |
-| Faculty | Report campus problems |
-| Admin | Manage complaints and assign staff |
+| Role              | Responsibilities                             |
+| ----------------- | -------------------------------------------- |
+| Student           | Submit complaints and track progress         |
+| Faculty           | Report campus facility issues                |
+| Admin             | Manage complaints and assign staff           |
 | Maintenance Staff | Handle assigned complaints and update status |
 
-## 6. Database Design
+## Technology Stack
 
-We use **MySQL** as our database management system.
+| Component         | Technology                    |
+| ----------------- | ----------------------------- |
+| Frontend          | HTML, CSS, JavaScript         |
+| Backend           | Node.js, Express.js           |
+| Database          | TiDB Cloud (MySQL compatible) |
+| Database Driver   | mysql2                        |
+| Authentication    | JSON Web Token (JWT)          |
+| Password Security | bcryptjs                      |
+| Version Control   | Git, GitHub                   |
 
-Database Name: `ewu_campus_maintenance`
+## Database Design
 
-Our database contains 9 tables:
+Database name: `ewu_campus_maintenance`
 
-| Table | Purpose |
-|---|---|
-| roles | Stores user roles |
-| users | Stores user information |
-| locations | Stores campus locations |
-| categories | Stores complaint categories |
-| statuses | Stores complaint statuses |
-| complaints | Stores complaint details |
-| staff_assignments | Stores staff assignments |
-| complaint_history | Stores complaint history |
-| feedback | Stores user feedback |
+The database contains 9 tables:
 
-These tables are connected through Primary Keys and Foreign Keys to maintain relationships and data integrity.
+| Table             | Purpose                     |
+| ----------------- | --------------------------- |
+| roles             | Stores user roles           |
+| users             | Stores user information     |
+| locations         | Stores campus locations     |
+| categories        | Stores complaint categories |
+| statuses          | Stores complaint statuses   |
+| complaints        | Stores complaint details    |
+| staff_assignments | Stores staff assignments    |
+| complaint_history | Stores complaint history    |
+| feedback          | Stores user feedback        |
 
-## 7. Database Connection
+Primary Keys and Foreign Keys maintain relationships and data integrity.
 
-Our system uses **Node.js and Express.js** for backend operations and **MySQL** for data storage.
+## Project Architecture
 
-We use the `mysql2` package to connect the backend with the database.
+1. The frontend sends API requests to the backend.
+2. The backend validates requests and handles application logic.
+3. The backend communicates with the database.
+4. The database stores and retrieves application data.
+5. The backend returns responses to the frontend.
 
-The process works like this:
+## Deployment
 
-1. The frontend sends a request to the backend.
-2. The backend processes the request.
-3. The backend communicates with MySQL.
-4. MySQL stores or retrieves the required information.
-5. The result is sent back to the frontend.
+| Component   | Platform         |
+| ----------- | ---------------- |
+| Frontend    | Cloudflare Pages |
+| Backend API | Render           |
+| Database    | TiDB Cloud       |
 
-For example, when a student submits a complaint, the backend stores the complaint information in the database and connects it with the relevant user, location, category, and status.
+**Live Website:** [https://campus-maintenance.pages.dev](https://campus-maintenance.pages.dev)
 
-## 8. Technologies Used
+**Backend API:** [https://ewu-campus-maintenance-api.onrender.com](https://ewu-campus-maintenance-api.onrender.com)
 
-- **Frontend:** HTML, CSS, JavaScript
-- **Backend:** Node.js, Express.js
-- **Database:** MySQL
-- **Authentication:** JSON Web Token (JWT)
-- **Password Security:** bcrypt
-- **Database Connection:** mysql2
-- **Tools:** VS Code, XAMPP, phpMyAdmin
-- **Version Control:** Git and GitHub
+## Run Locally
 
-## 9. Future Plans
+### Prerequisites
 
-- Launch the system online.
-- Improve the user interface.
-- Add more useful features.
+- Node.js and npm
+- A configured TiDB Cloud database
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/Tahsin-Jawad/Campus-Maintenance.git
+cd Campus-Maintenance
+```
+
+### 2. Install dependencies
+
+```bash
+npm install
+```
+
+### 3. Configure environment variables
+
+Create a `.env` file in the project root and add your own database credentials and JWT secret:
+
+```env
+PORT=5000
+TIDB_HOST=your_tidb_host
+TIDB_PORT=4000
+TIDB_USER=your_tidb_user
+TIDB_PASSWORD=your_tidb_password
+TIDB_DATABASE=ewu_campus_maintenance
+TIDB_ENABLE_SSL=true
+JWT_SECRET=your_jwt_secret
+```
+
+### 4. Start the backend
+
+```bash
+npm start
+```
+
+The backend will run at:
+
+`http://localhost:5000`
+
+## Future Improvements
+
+- Improve user interface and accessibility.
+- Add more reporting and monitoring features.
+- Enhance complaint analytics and management.
 
 ---
 
-**Project:** EWU Campus Maintenance & Facility Issue Reporting System
-
-**University:** East West University
-
-**Status:** Under Development
-
-**GitHub:** https://github.com/Tahsin-Jawad/Campus-Maintenance
-
-
+**Project:** Campus Maintenance & Facility Issue Reporting System
+**Status:** Deployed — Under Development
+**GitHub:** [https://github.com/Tahsin-Jawad/Campus-Maintenance](https://github.com/Tahsin-Jawad/Campus-Maintenance)
+**Live Demo:** [https://campus-maintenance.pages.dev](https://campus-maintenance.pages.dev)
