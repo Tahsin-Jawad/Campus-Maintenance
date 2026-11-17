@@ -1,4 +1,4 @@
-const API_BASE = "http://localhost:5000/api";
+const API_BASE = "https://ewu-campus-maintenance-api.onrender.com";
 
 async function apiRequest(endpoint, options = {}) {
   const token = sessionStorage.getItem("campuscare_token");
