@@ -8,12 +8,13 @@ A web-based platform for reporting, managing, and tracking maintenance issues at
 
 ## About the Project
 
-The EWU Campus Maintenance System is a centralized platform where students and faculty members can report campus facility problems.
+This project originally started as part of my **CSE 302 – Database Systems** course at East West University.
 
-Administrators can review complaints, assign them to maintenance staff, and monitor their progress. Staff members can manage assigned tasks and update complaint statuses.
+While working on the project, I realized that a campus maintenance and issue reporting system could be genuinely useful beyond an academic assignment. So, instead of keeping it as just a university project, I decided to take it a step further by hosting it online, improving its functionality, and making it accessible through the web.
 
-The goal is to make campus maintenance more organized, transparent, and efficient.
+The primary goal is to build something practical for my own campus — a platform where students and faculty members can report facility issues, track complaints, and help make campus maintenance more organized and efficient.
 
+Although it was initially developed with East West University in mind, the system is designed in a way that others can explore and use as well.
 ## Features
 
 - User Registration and Login
