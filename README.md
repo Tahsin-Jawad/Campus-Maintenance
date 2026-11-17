@@ -1,4 +1,4 @@
-# EWU Campus Maintenance & Facility Issue Reporting System
+# Campus Maintenance & Facility Issue Reporting System
 
 A web-based platform for reporting, managing, and tracking maintenance issues at East West University (EWU).
 
@@ -138,8 +138,7 @@ The backend will run at:
 - Enhance complaint analytics and management.
 
 ---
-
-**University:** East West University  
+ 
 **Project Status:** Deployed — Under Development  
 **Live Demo:** [campus-maintenance.pages.dev](https://campus-maintenance.pages.dev)  
 **GitHub:** [Tahsin-Jawad/Campus-Maintenance](https://github.com/Tahsin-Jawad/Campus-Maintenance)
